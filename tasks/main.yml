@@ -1,0 +1,18 @@
+- name: Install required RPM packages
+  community.general.rpm_ostree_pkg:
+    name: 
+      - kubelet
+      - kubeadm
+      - crio
+  register: layersAdded
+
+- name: Delete install-python service unit file
+  file:
+    path: /etc/systemd/system/install-python.service
+    state: absent
+
+- name: Reboot if required
+  reboot:
+  when: layersAdded.changed
+
+- include_tasks: services.yml
