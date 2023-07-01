@@ -1,0 +1,11 @@
+- name: Enable kubelet systemd service
+  systemd:
+    name: kubelet
+    state: started
+    enabled: true
+
+- name: Enable crio systemd service
+  systemd:
+    name: crio
+    state: started
+    enabled: true
