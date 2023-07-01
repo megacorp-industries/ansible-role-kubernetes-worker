@@ -1,0 +1,11 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: kubernetes-worker
+  author: mi
+  description: For setting up kubernetes worker nodes
+  company: "Megacorp Industries"
+  min_ansible_version: 2.4
+  galaxy_tags:
+    - kubernetes
