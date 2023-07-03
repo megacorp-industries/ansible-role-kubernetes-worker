@@ -6,11 +6,6 @@
       - crio
   register: layersAdded
 
-- name: Delete install-python service unit file
-  file:
-    path: /etc/systemd/system/install-python.service
-    state: absent
-
 - name: Reboot if required
   reboot:
   when: layersAdded.changed
